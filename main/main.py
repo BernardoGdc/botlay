@@ -3,6 +3,8 @@ import os
 from dotenv import load_dotenv
 from discord import Intents, Client, Message
 from setup import *
+from sportsipy.nba.teams import Teams
+from api.basketballAPI import *
 
 
 load_dotenv()
@@ -48,6 +50,8 @@ async def on_message(message: Message):
 
 
 def main():
+    getTeamNBA()
+    getPlayersNBA("DAL")
     client.run(token=TOKEN)
 
 if __name__ == '__main__':
